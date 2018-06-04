@@ -1,0 +1,32 @@
+1  cd /
+    2  cd
+    3  sudo yum install java-1.8.0-open jdk
+    4  java -version
+    5   yum install java-1.8.0-open jdk
+    6  java -version
+    7  java -version
+    8   yum install java-1.8.0-open jdk
+    9   yum install java-1.8.0-openjdk
+   10  java -version
+   11  wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+   12  rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+   13  yum install jenkins
+   14  chkconfig jenkins on
+   15  service jenkins start
+   16  iptables -L -n
+   17  sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+   18  sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+   19  iptables -L -n
+   20  service jenkins restart
+   21  service jenkins start
+   22  netstat -nl | grep 8080
+   23  netstat -nl 
+   24  sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+   25  sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8443
+   26  sudo iptables-save > /etc/sysconfig/iptables
+   27  cd /var/lib
+   28  ls
+   29  cd jenkins/secrets
+   30  ls
+   31  cat initialAdminPassword 
+   32  history

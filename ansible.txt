@@ -1,0 +1,35 @@
+1  cd
+    2  clear
+    3  sudo yum install epel-release
+    4  sudo yum install ansible
+    5  sudo vi /etc/ansible/hosts
+    6  clip < /etc/ansible/hosts
+    7  clip < (/etc/ansible/hosts)
+    8  sudo vi /etc/ansible/hosts
+    9  cat vi /etc/ansible/hosts
+   10  ansiblr -version
+   11  ansible -version
+   12  yum install python-pip python-devel git
+   13  pip install ansible
+   14  pip install --upgrade pip
+   15  ansible --version
+   16  ansible all -m ping
+   17  ansible Webservers -m command -a "ls"
+   18  vi apache.yml
+   19  ls
+   20  rm apache.yml
+   21  ls
+   22  clear
+   23  vi /etc/ansible/ansible.cfg
+   24  mv /etc/ansible/hosts /etc/ansible/hosts.org 
+   25  vi /etc/ansible/hosts 
+   26  ansible all --list-hosts
+   27  ansible target_servers --list-hosts 
+   28  ansible target_servers -m ping
+   29  vi /etc/ansible/hosts 
+   30  vi /etc/ansible/hosts 
+   31  vi /etc/ansible/hosts 
+   32  ansible all --list-hosts
+   33  ansible target_servers --list-hosts 
+   34  ansible target_servers -m ping
+   35  history
