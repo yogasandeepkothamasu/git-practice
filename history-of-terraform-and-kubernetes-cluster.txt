@@ -1,0 +1,390 @@
+    1  clear
+    2  sudo yum -y update
+    3  sudo yum install python2-pip
+    4  sudo pip install awscli
+    5  sudo yum -y install epel-release
+    6  sudo yum install python2-pip
+    7  sudo pip install awscli
+    8  sudo pip install --upgrade pip
+    9  awscli
+   10  aws
+   11  aws console
+   12  aws autoscaling
+   13  clear
+   14  sudo yum -y install python-pip
+   15  ls -la
+   16  cd .aws
+   17  cd /etc
+   18  ls
+   19  cd
+   20  ls ~/.aws
+   21  sudo pip install awscli boto3
+   22  sudo pip install awscli boto core
+   23  sudo pip install awscli boto-core
+   24  sudo pip install awscli botocore
+   25  clear
+   26  aws configure
+   27  LS
+   28  ls
+   29  ls -la
+   30  cd.aws
+   31  cd .aws
+   32  ls
+   33  cat config 
+   34  cat credentials 
+   35  history
+   36  cd
+   37  clear
+   38  aws iam get-user
+   39  sudo aws iam get-user
+   40  aws configure
+   41  cd .aws
+   42  cat config 
+   43  cat credentials 
+   44  sudo aws iam get-user
+   45  sudo vi config 
+   46  sudo aws iam get-user
+   47  sudo vi config 
+   48  sudo aws iam get-user
+   49  aws iam get-user
+   50  sudo vi config 
+   51  aws iam get-user
+   52  sudo vi config 
+   53  aws iam get-user
+   54  cd
+   55  KUBECTL_BIN=kubectl
+   56   
+   57  function install_kubectl {     if [ -z $(which $KUBECTL_BIN) ];        then            curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/$KUBECTL_BIN;            chmod +x ${KUBECTL_BIN};            sudo mv ${KUBECTL_BIN} /usr/local/bin/${KUBECTL_BIN};     else        echo "Kubectl is most likely installed";     fi;  }
+   58  install_kubectl
+   59  kubectl
+   60  ls -la
+   61  cd .pki
+   62  ls
+   63  cd ..
+   64  cd /usr/local/bin
+   65  ls
+   66  ls -la
+   67  cd
+   68      function install_kops {         if [ -z $(which kops) ];            then                curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64;                chmod +x kops-linux-amd64;                mv kops-linux-amd64 /usr/local/bin/kops;            else                echo "kops is most likely installed";            fi;     }
+   69       
+   70      install_kops
+   71  sudo mv kops-linux-amd64 /usr/local/bin/kops
+   72  install_kops
+   73  kops
+   74  ls -la
+   75      TERRAFORM_ZIP_FILE=terraform_0.11.7_linux_amd64.zip
+   76      TERRAFORM=https://releases.hashicorp.com/terraform/0.11.7
+   77      TERRAFORM_BIN=terraform
+   78       
+   79      function install_terraform {         if [ -z $(which $TERRAFORM_BIN) ];            then                wget ${TERRAFORM}/${TERRAFORM_ZIP_FILE};                unzip ${TERRAFORM_ZIP_FILE};                sudo mv ${TERRAFORM_BIN} /usr/local/bin/${TERRAFORM_BIN};                rm -rf ${TERRAFORM_ZIP_FILE};         else            echo "Terraform is most likely installed";         fi;           }
+   80       
+   81      install_terraform 
+   82  sudo yum -y install wget
+   83  sudo yum -y install unzip
+   84      TERRAFORM_ZIP_FILE=terraform_0.11.7_linux_amd64.zip
+   85      TERRAFORM=https://releases.hashicorp.com/terraform/0.11.7
+   86      TERRAFORM_BIN=terraform
+   87       
+   88      function install_terraform {         if [ -z $(which $TERRAFORM_BIN) ];            then                wget ${TERRAFORM}/${TERRAFORM_ZIP_FILE};                unzip ${TERRAFORM_ZIP_FILE};                sudo mv ${TERRAFORM_BIN} /usr/local/bin/${TERRAFORM_BIN};                rm -rf ${TERRAFORM_ZIP_FILE};         else            echo "Terraform is most likely installed";         fi;           }
+   89       
+   90      install_terraform 
+   91  terraform
+   92  ls -la
+   93  cd /usr/local/bin
+   94  ls
+   95  cd
+   96  vi terraform.tfvars
+   97  vi terraform.code.tf
+   98  ls -la
+   99  mkdir terraform
+  100  ls -la
+  101  sudo mv terraform.tfvars ~/terraform
+  102  sudo mv terraform.code.tf ~/terraform
+  103  ls -la
+  104  cd terraform 
+  105  ls
+  106  terraform$ terraform init
+  107  terraform init
+  108  terraform plan
+  109  terraform apply
+  110  vi terraform.tfvars
+  111  vi terraform.code.tf
+  112  terraform init
+  113  terraform apply
+  114  vi terraform.code.tf
+  115  terraform init
+  116  terraform apply
+  117  vi terraform.code.tf
+  118  terraform init
+  119  vi terraform.code.tf
+  120  terraform init
+  121  vi terraform.code.tf
+  122  terraform init
+  123  vi terraform.code.tf
+  124  terraform init
+  125  terraform apply
+  126  vi terraform.code.tf
+  127  terraform destroy
+  128  terraform init
+  129  terraform plan
+  130  vi terraform.code.tf
+  131  terraform init
+  132  terraform apply
+  133  vi terraform.code.tf
+  134  terraform init
+  135  terraform apply
+  136  vi terraform.code.tf
+  137  terraform init
+  138  terraform apply
+  139  terraform destroy
+  140  vi terraform.code.tf
+  141  terraform init
+  142  terraform apply
+  143  terraform destroy
+  144  vi terraform.code.tf
+  145  kops
+  146      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win       --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=devopsinuse_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  147  pwd
+  148  cd
+  149  ssh-keygen -t rsa
+  150  cd terraform/
+  151      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win       --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=devopsinuse_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  152  cd terraform/
+  153  vi terraform.code.tf 
+  154  terraform init
+  155  terraform apply
+  156  terraform destroy
+  157  cd
+  158  ls -la
+  159  cd .terraform.d/
+  160  ls
+  161  cd terraform
+  162  cd ..
+  163  cd terraform
+  164  ls
+  165  vi terraform.tfstate.backup 
+  166  vi terraform.code.tf
+  167  terraform plan
+  168  terraform apply
+  169  terraform destroy
+  170  kops
+  171      kops create cluster       --name=kops.devopsinuse.com       --state=s3://kops.devopsinuse.com       --authorization RBAC       --zones=eu-central-1a       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.devopsinuse.com       --out=devopsinuse_terraform       --target=terraform       --ssh-public-key=~/.ssh/<user_name>.pub
+  172      kops create cluster       --name=kops.devopsinuse.com       --state=s3://kops.devopsinuse.com       --authorization RBAC       --zones=eu-central-1a       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.devopsinuse.com       --out=devopsinuse_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  173  kops create cluster       --name=kops.sandeep.com       --state=s3://kops.sandeep.com        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.sandeep.com        --out=devopsinuse_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  174  kops
+  175  ll
+  176  ls 
+  177  cd
+  178      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win        --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  179      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=28.awsdns-03.com       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  180      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=28.awsdns-03.com       --out=kops_terraform       --target=terraform \
+  181      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  182      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  183  kops
+  184  kops version
+  185   
+  186  cd /etc
+  187  ls
+  188  sudo vi resolv.conf 
+  189  cd
+  190      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  191      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --dns public
+  192        --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  193  cd /etc
+  194  sudo vi resolv.conf 
+  195  cd
+  196      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.com       --dns public
+  197        --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub    kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.com       --dns public
+  198        --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  199      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.com       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  200      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  201      kops create cluster       --name=kops.kothamasu       --state=s3://kops.kothamasu        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  202      kops create cluster       --name=kops.kothamasu       --state=s3://kops.kothamasu        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  203  suo vi /etc/resolv.conf 
+  204  sudo vi /etc/resolv.conf 
+  205      kops create cluster       --name=kops.kothamasu       --state=s3://kops.kothamasu        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  206      kops create cluster       --name=kops.kothamasu       --state=s3://kops.kothamasu        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  207  sudo /etc/resolv.conf 
+  208  sudo vi /etc/resolv.conf 
+  209      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  210      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  211      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  212      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  213      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  214      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  215      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  216  sudo vi /etc/resolv.conf 
+  217      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform \
+  218  kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  219  kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  220      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  221  sudo vi /etc/resolv.conf 
+  222      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  223      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  224  sudo vi /etc/resolv.conf 
+  225      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  226  sudo vi /etc/resolv.conf 
+  227      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  228  sudo vi /etc/resolv.conf 
+  229      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  230  ls -la
+  231  sudo vi /etc/resolv.conf 
+  232      kops create cluster       --name=kops.kothamasu.win       --state=s3://kops.kothamasu.win        --authorization RBAC       --zones=us-west-1b       --node-count=2       --node-size=t2.micro       --master-size=t2.micro       --master-count=1       --dns-zone=kops.kothamasu.win       --out=kops_terraform       --target=terraform       --ssh-public-key=~/.ssh/id_rsa.pub
+  233  ll
+  234  cd kops_terraform/
+  235  ll
+  236  terraform apply
+  237  terraform init
+  238  terraform apply
+  239  kubectl get nodes
+  240  kubectl
+  241  sudo kubectl get nodes
+  242  kubectl get nodes
+  243  terraform destroy
+  244  kubectl get nodes
+  245  cd
+  246  ls
+  247  vi `:wq
+  248  cd terraform
+  249  ls
+  250  cd
+  251  clear
+  252  ls
+  253  cd terraform
+  254  ls
+  255  vi terraform.tfvars 
+  256  vi terraform.code.tf 
+  257  terraform init
+  258  terraform apply
+  259  terraform destroy
+  260  clear
+  261  kubectl get nodes
+  262  clear
+  263  cd terraform
+  264  ls
+  265  vi terraform.tfvars 
+  266  vi terraform.code.tf
+  267  cd
+  268  ls
+  269  cd kops_terraform/
+  270  ls
+  271  terraform init
+  272  terraform apply
+  273  terraform destroy
+  274  clear
+  275  ls -la
+  276  cd .kube
+  277  ls
+  278  cd ..
+  279  cd .terraform.d/
+  280  ls
+  281  cd
+  282  clear
+  283  cd kops_terraform/
+  284  ll
+  285  terraform init
+  286  terraform plan
+  287  terraform apply
+  288  kubectl get nodes
+  289  clear
+  290  cd
+  291  kubectl get nodes
+  292  clear
+  293  sudo yum install nginx
+  294  cd .kube/
+  295  ls
+  296  sudo vi config
+  297  ll
+  298  cd
+  299  clear
+  300  kubectl get nodes
+  301  kubectl         create deployment my-nginx-deployment         --image=nginx
+  302  kubectl get pods
+  303  kubectl         expose deployment my-nginx-deployment         --port=80         --type=NodePort         --name=my-nginx-service
+  304  kubectl get pods.svc
+  305  kubectl get pods,svc
+  306  kubectl edit pod/my-nginx-deployment-6fccf5688b-2dlzs
+  307  kubectl edit service/my-nginx-service
+  308  sudo vi deployment_file.yaml
+  309  sudo vi configmap_content.html
+  310  pwd
+  311  ls -la
+  312  kubectl create configmap nginx-content --from-file=/home/yoga
+  313  pwd
+  314  ls -la
+  315  cat `:wq
+
+  316  kubectl create configmap nginx-content --from-file=/home/yoga
+  317  mkdir nginx
+  318  cd nginx/
+  319  cd
+  320  mv deployment_file.yaml nginx
+  321  mv configmap_content.html nginx
+  322  ls 
+  323  cd nginx
+  324  ls
+  325  cd
+  326  kubectl create configmap nginx-content --from-file=/home/yoga/nginx
+  327  ls -la
+  328  cd nginx
+  329  ls -la
+  330  locate config
+  331  grep config
+  332  grep configmap
+  333  find path configmap
+  334  find  configmap
+  335  where is configmap
+  336  lp
+  337  readlink -f configmap
+  338  cd nginx
+  339  cd
+  340  ls
+  341  cd nginx/
+  342  ls
+  343  ls -la
+  344  kubectl get cm
+  345  readlink -f nginx-content
+  346  cd ..
+  347  ld
+  348  ls
+  349  kubectl get cm
+  350  kubectl describe cm nginx-content
+  351  cd nginx/
+  352  cd .
+  353  ls
+  354  cd
+  355  clear
+  356  cd nginx/
+  357  vi deployment_file.yaml 
+  358  kubectl create -f deployment_file.yaml 
+  359  kubectl get deploy,svc,pod,cm
+  360  kubectl get pods
+  361  kubectl logs my-nginx-deployment-6fccf5688b-2dlzs
+  362  kubectl exec -it my-nginx-deployment-6fccf5688b-2dlzs
+  363  kubectl exec -it nginx-deployment-7b8f7dc485-lqmxq
+  364  kubectl exec -it nginx-deployment-7b8f7dc485-lqmxq --bash
+  365  kubectl exec -it nginx-deployment-7b8f7dc485-lqmxq -- bash
+  366  hitory
+  367  history
+  368  cd
+  369  echo history > history.txt
+  370  ls
+  371  cat history.txt 
+  372  vi history.txt 
+  373  history > history.txt
+  374  vi history.txt 
+  375  mv history.txt history of terraform&kubernetes cluster.txt
+  376  mv history.txt history-of-terraform&kubernetes cluster.txt
+  377  mv history.txt history-of-terraform&kubernetes-cluster.txt
+  378  ls -la
+  379  cd nginx
+  380  ls
+  381  cd
+  382  readlink -f history.txt
+  383  pwd
+  384  ls
+  385  ll
+  386  vi history.txt
+  387  history
+  388  history > history-of-terraform&kubernetes-cluster.txt
+  389  history > history-of-terraform-and-kubernetes-cluster.txt
